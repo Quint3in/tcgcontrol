@@ -6,16 +6,20 @@ import DBClient from '../config/dbClient.js';
 import Config from '../config/config.js';
 
 const app = express();
-const port = 3001;
-
 let algos = [];
-
+let port = 3001;
+let host = "http://localhost";
 //Cargar configuración
-const config = new Config().getConfig();
-const urlDB = config.urlDB.replace('<db_password>', config.passDB).replace('<database>', config.dbName).replace('<db_user>', config.userDB);
+const config = new Config().getConfig().backend;
+const configDB = config.database
+console.log(configDB);
+const urlDB = configDB.url.replace('<db_password>', configDB.pass).replace('<database>', configDB.db).replace('<db_user>', configDB.user);
 //Cargar conexión a base de datos MondongoDB
 const dbClient = new DBClient('algos', urlDB);
 
+//Cargar datos del host
+port = config.port;
+host = config.url;
 
 //#region (nos la pela)
 app.use(
@@ -36,7 +40,7 @@ app.get('/test', (req, res) => {
 });
 
 app.listen(port, "0.0.0.0", () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Example app listening at ${host}:${port}`);
 });
 
 //Enviar info al backend

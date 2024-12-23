@@ -1,5 +1,6 @@
 import React from "react";
 import './form.css';
+import { backURL, backPort } from './index.js';
 
 function Form() {
   return (
@@ -21,8 +22,8 @@ const submitEvent = (event) => {
   let algo = document.getElementById('algo').value
   let objetoAlgo = { algo: algo };
   let objetoAlgoJson = JSON.stringify(objetoAlgo);
-
-    fetch("http://localhost:3001/algo", {
+    //fetch("http://localhost:3001/algo", {
+    fetch(backURL + ":" + backPort + "/algo", {
         body: objetoAlgoJson,
         method: "POST",
         headers: {

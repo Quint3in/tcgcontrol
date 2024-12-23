@@ -1,6 +1,12 @@
 {
-    "urlDB" : "mongodb+srv://<db_user>:<db_password>@testcluster.xqztk.mongodb.net/<database>?retryWrites=true&w=majority&appName=TestCluster",
-    "userDB" : "root",
-    "passDB" : "miscojohns33",
-    "dbName" : "tcgcontrol"
+    "backend" : {
+        "url" : "http://localhost",
+        "port" : 3001,
+        "database" : {
+            "url" : "mongodb+srv://<db_user>:<db_password>@testcluster.xqztk.mongodb.net/<database>?retryWrites=true&w=majority&appName=TestCluster",
+            "user" : "root",
+            "pass" : "miscojohns33",
+            "db" : "tcgcontrol"
+        } 
+    }
 }

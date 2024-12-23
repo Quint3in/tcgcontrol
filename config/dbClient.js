@@ -8,20 +8,10 @@ class dbClient {
       this.dbname = dbname;
       this.db = null;
       this.url = url;
-      const queryString = "mongodb+srv://root:miscojohns33@testcluster.xqztk.mongodb.net/?retryWrites=true&w=majority&appName=TestCluster";
       //this.client = new MongoClient(queryString);
       this.connectDB();
     }
 
-    // async connectDB() {
-    //   try {
-    //     await this.client.connect();
-    //     this.db = this.client.db;
-    //     console.log("Connected to the database");
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    // }
 
     async connectDB() {
       try {
