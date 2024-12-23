@@ -3,12 +3,18 @@ import express from 'express';
 //const cors = require('cors');
 import cors from 'cors';
 import DBClient from '../config/dbClient.js';
+import Config from '../config/config.js';
 
 const app = express();
 const port = 3001;
 
 let algos = [];
-const dbClient = new DBClient('algos');
+
+//Cargar configuración
+const config = new Config().getConfig();
+const urlDB = config.urlDB.replace('<db_password>', config.passDB).replace('<database>', config.dbName).replace('<db_user>', config.userDB);
+//Cargar conexión a base de datos MondongoDB
+const dbClient = new DBClient('algos', urlDB);
 
 
 //#region (nos la pela)
