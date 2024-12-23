@@ -39,4 +39,4 @@ class dbClient {
     
 }
 
-export default new dbClient;
+export default dbClient;

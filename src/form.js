@@ -22,7 +22,7 @@ const submitEvent = (event) => {
   let objetoAlgo = { algo: algo };
   let objetoAlgoJson = JSON.stringify(objetoAlgo);
 
-    fetch("https://2lmd4rnw-3001.uks1.devtunnels.ms/algo", {
+    fetch("http://localhost:3001/algo", {
         body: objetoAlgoJson,
         method: "POST",
         headers: {

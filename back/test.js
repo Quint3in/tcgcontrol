@@ -2,12 +2,13 @@
 import express from 'express';
 //const cors = require('cors');
 import cors from 'cors';
-import dbClient from '../config/dbClient.js';
+import DBClient from '../config/dbClient.js';
 
 const app = express();
 const port = 3001;
 
 let algos = [];
+const dbClient = new DBClient('algos');
 
 
 //#region (nos la pela)
@@ -38,7 +39,7 @@ app.post('/algo', (req, res) => {
     algos.push(req.body);
 
 
-    const dbAlgos = dbClient.db.collection('algos');
+    const dbAlgos = dbClient.db;
     dbAlgos.insertOne(req.body);
 
 
