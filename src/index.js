@@ -5,11 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Makinon from './makinon';
 import Form from './form';
-import Config from '../config/Config.js';
-//Cargar configuración
-const config = new Config().getConfig();
-export const backURL = config.backend.url;
-export const backPort = config.backend.port;
+export const backURL = process.env.REACT_APP_BACK_URL;
+export const backPort = process.env.REACT_APP_BACK_PORT;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
