@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
-import Form from './form';
+import Form from './pages/form';
 export const backURL = process.env.REACT_APP_BACK_URL;
 export const backPort = process.env.REACT_APP_BACK_PORT;
 

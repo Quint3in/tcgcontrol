@@ -1,6 +1,6 @@
 import React from "react";
 import './form.css';
-import { backURL, backPort } from './index.js';
+import { backURL, backPort } from '../index.js';
 
 function Form() {
   return (
