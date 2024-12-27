@@ -1,0 +1,12 @@
+{
+    "backend" : {
+        "url" : "http://localhost",
+        "port" : 5000,
+        "database" : {
+            "url" : "mongodb+srv://<db_user>:<db_password>@testcluster.xqztk.mongodb.net/<database>?retryWrites=true&w=majority&appName=TestCluster",
+            "user" : "root",
+            "pass" : "miscojohns33",
+            "db" : "tcgcontrol"
+        } 
+    }
+}
