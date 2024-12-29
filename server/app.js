@@ -8,8 +8,6 @@ import Config from './config/Config.js';
 
 const app = express();
 let algos = [];
-let port = 3001;
-let host = "http://localhost";
 //Cargar configuración
 const config = new Config().getConfig().backend;
 const configDB = config.database
@@ -19,8 +17,8 @@ const urlDB = configDB.url.replace('<db_password>', configDB.pass).replace('<dat
 const dbClient = new DBClient('algos', urlDB);
 
 //Cargar datos del host
-port = config.port;
-host = config.url;
+const port = config.port;
+const host = config.url;
 
 //#region (nos la pela)
 app.use(
